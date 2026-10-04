@@ -1,333 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Błażej Stanisz — Personal Homepage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Personal homepage of Błażej Stanisz — projects, AI explorations, learning, and digital creations."
-  />
-  <style>
-    :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --card: rgba(15, 23, 42, 0.85);
-      --border: rgba(148, 163, 184, 0.3);
-      --shadow: 0 18px 45px rgba(15, 23, 42, 0.85);
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Błażej Stanisz — I build small, focused software</title>
+<meta name="description" content="Personal homepage of Błażej Stanisz — small, focused web apps and tools, built and shipped in the open. Live projects, experiments, and things I'm learning." />
+<meta name="author" content="Błażej Stanisz" />
+<meta name="theme-color" content="#0c111d" />
+<link rel="canonical" href="https://blazej-stanisz.github.io/" />
 
-    * {
-      box-sizing: border-box;
-    }
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://blazej-stanisz.github.io/" />
+<meta property="og:title" content="Błażej Stanisz — I build small, focused software" />
+<meta property="og:description" content="Small, focused web apps and tools, built and shipped in the open." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Błażej Stanisz — I build small, focused software" />
+<meta name="twitter:description" content="Small, focused web apps and tools, built and shipped in the open." />
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 55%, #000 100%);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px 16px;
-    }
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c111d'/><text x='32' y='44' font-family='Inter,Helvetica,Arial,sans-serif' font-size='30' font-weight='600' fill='%23f4f5f7' text-anchor='middle'>BS</text></svg>" />
 
-    .shell {
-      max-width: 960px;
-      width: 100%;
-      background: linear-gradient(
-        145deg,
-        rgba(15, 23, 42, 0.96),
-        rgba(15, 23, 42, 0.9),
-        rgba(15, 23, 42, 0.96)
-      );
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 32px 28px 28px;
-      backdrop-filter: blur(18px);
-      position: relative;
-      overflow: hidden;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap" />
 
-    .shell::before {
-      content: "";
-      position: absolute;
-      inset: -40%;
-      background:
-        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.18), transparent 55%),
-        radial-gradient(circle at 100% 0%, rgba(129, 140, 248, 0.18), transparent 55%);
-      opacity: 0.6;
-      pointer-events: none;
-    }
+<style>
+  :root{
+    --bg:#0c111d;
+    --bg-2:#0e131f;
+    --surface:#161b26;
+    --surface-2:#1a2030;
+    --ink:#f4f5f7;
+    --muted:#9aa0ab;
+    --dim:#868d99;
+    --accent:#38bdf8;
+    --line:rgba(255,255,255,.085);
+    --line-strong:rgba(255,255,255,.16);
+    --r-sm:12px;
+    --r-md:18px;
+    --r-lg:26px;
+    --pill:50px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+    --shell:1140px;
+  }
 
-    .shell-inner {
-      position: relative;
-      z-index: 1;
-    }
+  *{box-sizing:border-box}
 
-    header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 24px;
-    }
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:104px;
+    -webkit-text-size-adjust:100%;
+  }
 
-    .avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at 30% 0%, #38bdf8, #1d4ed8);
-      color: #0b1120;
-      font-weight: 700;
-      font-size: 22px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
-    }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-weight:400;
+    font-size:1.0625rem;
+    line-height:1.6;
+    letter-spacing:-.005em;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
 
-    h1 {
-      margin: 0;
-      font-size: 1.9rem;
-      letter-spacing: 0.02em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  /* ambient backdrop: one soft glow + a faint fading grid, nothing louder */
+  .bg{position:fixed;inset:0;pointer-events:none;z-index:0}
+  .bg::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(760px 420px at 50% -120px,rgba(56,189,248,.13),transparent 68%);
+  }
+  .bg::after{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
+    background-size:64px 64px;
+    -webkit-mask-image:radial-gradient(760px 460px at 50% 0,#000,transparent 78%);
+    mask-image:radial-gradient(760px 460px at 50% 0,#000,transparent 78%);
+  }
 
-    h1 span.emoji {
-      font-size: 1.4rem;
-    }
+  .shell{width:100%;max-width:var(--shell);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+  @media (max-width:560px){ .shell{padding:0 20px} }
 
-    .subtitle {
-      margin-top: 4px;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.8rem;
-      margin-top: 8px;
-    }
+  .skip{
+    position:absolute;left:-9999px;top:0;z-index:100;
+    background:var(--ink);color:#0c111d;padding:.7rem 1.1rem;border-radius:0 0 10px 0;
+    font-size:.9rem;font-weight:500;
+  }
+  .skip:focus{left:0}
 
-    .pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
-    }
+  .eyebrow{
+    display:flex;align-items:center;gap:.7rem;
+    margin:0 0 1.25rem;
+    font-size:.735rem;text-transform:uppercase;letter-spacing:.17em;
+    color:var(--dim);font-weight:500;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--line-strong)}
 
-    main {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
-      gap: 24px;
-    }
+  /* ---------- nav ---------- */
+  .nav-wrap{position:fixed;top:14px;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:0 16px}
+  .nav{
+    display:flex;align-items:center;gap:14px;
+    width:100%;max-width:760px;
+    padding:7px 7px 7px 16px;
+    border:1px solid var(--line);
+    border-radius:var(--pill);
+    background:rgba(14,19,31,.72);
+    -webkit-backdrop-filter:saturate(1.6) blur(14px);
+    backdrop-filter:saturate(1.6) blur(14px);
+    box-shadow:0 12px 40px rgba(0,0,0,.42);
+  }
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;min-width:0}
+  .mono{
+    display:grid;place-items:center;flex:none;
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(160deg,#38bdf8,#2563eb);
+    color:#08111d;font-size:.78rem;font-weight:700;letter-spacing:.02em;
+  }
+  .brand-name{font-size:.92rem;font-weight:500;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .nav-links{display:flex;align-items:center;gap:2px;margin-left:auto}
+  .nav-links a{
+    padding:.46rem .78rem;border-radius:var(--pill);
+    font-size:.875rem;color:var(--muted);text-decoration:none;
+    transition:color .18s var(--ease),background .18s var(--ease);
+  }
+  .nav-links a:hover{color:var(--ink);background:rgba(255,255,255,.055)}
 
-    @media (max-width: 780px) {
-      main {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.72rem 1.3rem;border-radius:var(--pill);
+    font-size:.92rem;font-weight:500;letter-spacing:-.01em;
+    text-decoration:none;border:1px solid transparent;white-space:nowrap;
+    transition:transform .18s var(--ease),background .18s var(--ease),border-color .18s var(--ease),box-shadow .18s var(--ease),color .18s var(--ease);
+  }
+  .btn-sm{padding:.5rem .95rem;font-size:.86rem}
+  .btn-solid{background:var(--ink);color:#0c111d}
+  .btn-solid:hover{background:#fff;transform:translateY(-1px);box-shadow:0 12px 30px rgba(0,0,0,.45)}
+  .btn-ghost{border-color:var(--line-strong);color:var(--ink);background:rgba(255,255,255,.015)}
+  .btn-ghost:hover{border-color:rgba(255,255,255,.34);background:rgba(255,255,255,.05);transform:translateY(-1px)}
+  .arrow{display:inline-block;transition:transform .2s var(--ease)}
+  .btn:hover .arrow,a:hover>.arrow{transform:translate(2px,-2px)}
 
-    .card {
-      background: var(--card);
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 18px 18px 16px;
-    }
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(120px,15vw,178px) 0 clamp(56px,8vw,96px)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(2.6rem,6vw,5rem);align-items:end}
+  @media (max-width:900px){.hero-grid{grid-template-columns:minmax(0,1fr);gap:3rem;align-items:start}}
 
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      letter-spacing: 0.02em;
-    }
+  .badge{
+    display:inline-flex;align-items:center;gap:.55rem;
+    padding:.38rem .85rem .38rem .6rem;border-radius:var(--pill);
+    border:1px solid var(--line);background:rgba(255,255,255,.025);
+    font-size:.79rem;color:var(--muted);letter-spacing:.01em;
+  }
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(56,189,248,.16);flex:none}
 
-    .card p {
-      margin: 0 0 10px;
-      font-size: 0.95rem;
-      line-height: 1.55;
-      color: var(--muted);
-    }
+  h1{
+    margin:1.5rem 0 1.6rem;
+    font-size:clamp(2.45rem,6.3vw,4.45rem);
+    line-height:1.02;
+    letter-spacing:-.036em;
+    font-weight:600;
+    max-width:20ch;
+    text-wrap:balance;
+  }
+  h1 .hl{color:var(--accent)}
+  h1 .quiet{color:var(--muted);font-weight:400}
 
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 8px 0 0;
-    }
+  .sub{margin:0 0 .95rem;font-size:clamp(1.02rem,1.5vw,1.14rem);color:var(--muted);max-width:50ch;line-height:1.66}
+  .actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.1rem}
 
-    .card li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 8px;
-      font-size: 0.95rem;
-      color: var(--text);
-    }
+  .panel{
+    border:1px solid var(--line);border-radius:var(--r-md);
+    background:var(--surface);
+    padding:1.3rem 1.35rem 1.15rem;
+  }
+  .panel-label{
+    margin:0 0 .55rem;font-size:.735rem;text-transform:uppercase;letter-spacing:.16em;
+    color:var(--dim);font-weight:500;
+  }
+  .panel-list{list-style:none;margin:0;padding:0}
+  .panel-list li{display:flex;align-items:center;gap:.7rem;padding:.72rem 0;border-bottom:1px solid rgba(255,255,255,.065)}
+  .panel-list li:last-child{border-bottom:0;padding-bottom:.35rem}
+  .pname{font-size:.95rem;font-weight:500;text-decoration:none;letter-spacing:-.012em}
+  .pname:hover{color:var(--accent)}
+  .pkind{margin-left:auto;font-size:.75rem;color:var(--dim);white-space:nowrap}
+  .panel-foot{margin:.85rem 0 0;padding-top:.85rem;border-top:1px solid rgba(255,255,255,.065);font-size:.79rem;color:var(--dim);line-height:1.5}
 
-    .card li span.icon {
-      font-size: 1.1rem;
-      margin-top: 1px;
-    }
+  /* ---------- generic section ---------- */
+  .sec{padding:clamp(64px,9.5vw,118px) 0;position:relative}
+  .sec-line{border-top:1px solid var(--line)}
+  .sec-head h2{
+    margin:0 0 1.1rem;
+    font-size:clamp(1.85rem,3.7vw,2.85rem);
+    line-height:1.07;letter-spacing:-.032em;font-weight:600;
+    max-width:24ch;text-wrap:balance;
+  }
+  .lead{margin:0;color:var(--muted);max-width:56ch;font-size:1.02rem;line-height:1.68}
+  .foot-note{margin:2.2rem 0 0;font-size:.88rem;color:var(--dim);max-width:56ch}
+  .foot-note a{color:var(--muted);text-decoration:underline;text-decoration-color:rgba(255,255,255,.2);text-underline-offset:3px}
+  .foot-note a:hover{color:var(--ink)}
 
-    .muted {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+  /* ---------- projects ---------- */
+  .projects{list-style:none;margin:clamp(2.4rem,5vw,3.4rem) 0 0;padding:0;border-top:1px solid var(--line)}
+  .proj{border-bottom:1px solid var(--line);transition:background .2s var(--ease)}
+  .proj:hover{background:rgba(255,255,255,.018)}
+  .proj-in{
+    display:grid;grid-template-columns:3.2rem minmax(0,1fr) auto;
+    gap:1.4rem;padding:clamp(1.5rem,3.2vw,2.1rem) .4rem;align-items:start;
+  }
+  @media (max-width:820px){
+    .proj-in{grid-template-columns:minmax(0,1fr);gap:1rem;padding:1.6rem .2rem}
+    .proj-idx{padding-top:0}
+  }
+  .proj-idx{font-size:.82rem;color:var(--dim);letter-spacing:.08em;font-variant-numeric:tabular-nums;padding-top:.5rem}
+  .proj-name{margin:0 0 .55rem;font-size:clamp(1.22rem,2.3vw,1.62rem);font-weight:550;letter-spacing:-.026em;line-height:1.2}
+  .proj-name a{text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-size:0% 1px;background-position:0 100%;background-repeat:no-repeat;transition:background-size .28s var(--ease)}
+  .proj-name a:hover{background-size:100% 1px;color:var(--accent)}
+  .proj-desc{margin:0;color:var(--muted);max-width:60ch;line-height:1.63;font-size:1rem}
+  .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:.95rem 0 0;padding:0;list-style:none}
+  .tag{font-size:.74rem;color:var(--dim);border:1px solid var(--line);border-radius:var(--pill);padding:.24rem .68rem;letter-spacing:.015em}
+  .proj-links{display:flex;gap:.55rem;flex:none;padding-top:.35rem}
+  @media (max-width:820px){.proj-links{padding-top:.4rem}}
+  .plink{
+    display:inline-flex;align-items:center;gap:.35rem;
+    padding:.46rem .9rem;border-radius:var(--pill);border:1px solid var(--line-strong);
+    font-size:.85rem;color:var(--ink);text-decoration:none;
+    transition:border-color .18s var(--ease),background .18s var(--ease),transform .18s var(--ease);
+  }
+  .plink:hover{border-color:rgba(56,189,248,.55);background:rgba(56,189,248,.07);transform:translateY(-1px)}
 
-    .footer {
-      margin-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
+  /* ---------- accordion ---------- */
+  .acc{margin:clamp(2.2rem,4.5vw,3rem) 0 0;border-top:1px solid var(--line)}
+  .acc-item{border-bottom:1px solid var(--line)}
+  .acc-btn{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+    padding:1.45rem .4rem;background:none;border:0;color:inherit;font:inherit;
+    text-align:left;cursor:pointer;
+  }
+  .acc-q{font-size:clamp(1.04rem,1.9vw,1.32rem);font-weight:500;letter-spacing:-.022em;line-height:1.3;transition:color .2s var(--ease)}
+  .acc-btn:hover .acc-q{color:var(--accent)}
+  .acc-ico{
+    position:relative;flex:none;width:26px;height:26px;border-radius:50%;
+    border:1px solid var(--line-strong);
+    transition:border-color .24s var(--ease),background .24s var(--ease),transform .34s var(--ease);
+  }
+  .acc-ico::before,.acc-ico::after{
+    content:"";position:absolute;left:50%;top:50%;background:var(--muted);
+    transform:translate(-50%,-50%);transition:opacity .24s var(--ease),background .24s var(--ease);
+  }
+  .acc-ico::before{width:11px;height:1.5px}
+  .acc-ico::after{width:1.5px;height:11px}
+  .acc-btn:hover .acc-ico{border-color:rgba(56,189,248,.5)}
+  .acc-btn[aria-expanded="true"] .acc-ico{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.5);transform:rotate(180deg)}
+  .acc-btn[aria-expanded="true"] .acc-ico::after{opacity:0}
+  .acc-btn[aria-expanded="true"] .acc-ico::before{background:var(--accent)}
+  .acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s var(--ease)}
+  .acc-btn[aria-expanded="true"] + .acc-panel{grid-template-rows:1fr}
+  .acc-panel>div{overflow:hidden}
+  .acc-panel p{margin:0 0 1.5rem;padding-right:3rem;color:var(--muted);max-width:64ch;line-height:1.66}
+  @media (max-width:560px){.acc-panel p{padding-right:0}}
 
-    @media (max-width: 640px) {
-      .footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+  /* ---------- statement ---------- */
+  .statement{padding:clamp(70px,10vw,130px) 0}
+  .big{
+    margin:0 0 1.8rem;max-width:26ch;
+    font-size:clamp(1.65rem,4.3vw,3.15rem);line-height:1.14;
+    letter-spacing:-.032em;font-weight:500;text-wrap:balance;
+  }
+  .big .quiet{color:var(--muted)}
 
-    .tagline {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+  /* ---------- cta ---------- */
+  .cta{padding:clamp(30px,5vw,60px) 0 0}
+  .cta-card{
+    background:#f4f5f7;color:#0c111d;
+    border-radius:var(--r-lg);
+    padding:clamp(2rem,4.6vw,3.3rem);
+    display:grid;grid-template-columns:minmax(0,1.5fr) auto;
+    gap:clamp(1.6rem,4vw,3rem);align-items:end;
+  }
+  @media (max-width:760px){.cta-card{grid-template-columns:minmax(0,1fr);align-items:start}}
+  .cta-card h2{margin:0 0 .9rem;font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.08;letter-spacing:-.032em;font-weight:600;max-width:20ch;color:#0c111d}
+  .cta-card p{margin:0;color:#545b68;max-width:46ch;line-height:1.65}
+  .cta-card .eyebrow{color:#7b8290}
+  .cta-card .eyebrow::before{background:rgba(12,17,29,.2)}
+  .btn-dark{background:#0c111d;color:#f4f5f7}
+  .btn-dark:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(12,17,29,.3)}
+  .btn-dark-ghost{border-color:rgba(12,17,29,.22);color:#0c111d}
+  .btn-dark-ghost:hover{border-color:rgba(12,17,29,.45);background:rgba(12,17,29,.05);transform:translateY(-1px)}
 
-    .tagline span.dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-    }
+  /* ---------- footer ---------- */
+  .foot{
+    margin-top:clamp(64px,9vw,116px);
+    border-top:1px solid var(--line);
+    padding:2.3rem 0 3rem;
+    display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap;
+    font-size:.85rem;color:var(--dim);
+  }
+  .foot-links{display:flex;gap:1.3rem;flex-wrap:wrap}
+  .foot-links a{color:var(--muted);text-decoration:none;transition:color .18s var(--ease)}
+  .foot-links a:hover{color:var(--ink)}
 
-    .links {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+  /* ---------- reveal ---------- */
+  .js [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .72s var(--ease),transform .72s var(--ease);transition-delay:var(--d,0ms)}
+  .js [data-reveal].in{opacity:1;transform:none}
 
-    .link-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .link-pill:hover {
-      background: rgba(15, 23, 42, 0.9);
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-
-    .link-pill span.icon {
-      font-size: 1rem;
-    }
-  </style>
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .js [data-reveal]{opacity:1;transform:none;transition:none}
+    *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+  }
+  /* ---------- small screens ---------- */
+  @media (max-width:640px){
+    .brand-name{display:none}
+    .nav{max-width:none;padding-left:11px;gap:10px}
+    .nav-links{gap:0}
+    .nav-links a{padding:.44rem .6rem;font-size:.84rem}
+    .hero-grid{gap:2.4rem}
+  }
+  @media (max-width:400px){
+    .nav-links a{padding:.44rem .42rem;font-size:.79rem}
+    .shell{padding:0 18px}
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
+<div class="bg" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="nav-wrap">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">
+      <span class="mono" aria-hidden="true">BS</span>
+      <span class="brand-name">Błażej Stanisz</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#explore">Explore</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="btn btn-solid btn-sm" href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">
+      GitHub<span class="arrow" aria-hidden="true">↗</span>
+    </a>
+  </nav>
+</div>
+
+<main id="main">
   <div class="shell">
-    <div class="shell-inner">
-      <header>
-        <div class="avatar">B</div>
+
+    <section class="hero" id="top">
+      <div class="hero-grid">
         <div>
-          <h1>
-            <span class="emoji">🌐</span>
-            <span>Błażej Stanisz — Personal Homepage</span>
+          <p class="badge" data-reveal><span class="dot" aria-hidden="true"></span> Building and shipping in the open</p>
+
+          <h1 data-reveal style="--d:60ms">
+            Small, focused software — <span class="quiet">built and</span> <span class="hl">shipped</span> <span class="quiet">in the open.</span>
           </h1>
-          <div class="subtitle">
-            A space dedicated to creativity, technology, and continuous learning.
-          </div>
-          <div class="pill">
-            <span class="pill-dot"></span>
-            <span>Building, learning, and creating in public</span>
+
+          <p class="sub" data-reveal style="--d:120ms">
+            I build web apps and tools that do one thing well: no dependencies, no backend, no sign-up —
+            just a page that works.
+          </p>
+          <p class="sub" data-reveal style="--d:160ms">
+            This site is where I collect what I've built, what I'm learning, and what's coming next.
+          </p>
+
+          <div class="actions" data-reveal style="--d:220ms">
+            <a class="btn btn-solid" href="#work">See what I've built<span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">GitHub profile<span class="arrow" aria-hidden="true">↗</span></a>
           </div>
         </div>
-      </header>
 
-      <main>
-        <section class="card">
-          <h2>Welcome</h2>
-          <p>
-            Welcome to the personal homepage of <strong>Błażej Stanisz</strong> — a space dedicated
-            to creativity, technology, and continuous learning.
-          </p>
-          <p>
-            This site serves as a central hub for my work: from coding projects and technical deep
-            dives to personal initiatives and digital creations. Whether you’re here to explore my
-            repositories, learn more about my interests, or simply connect — I’m glad you stopped by.
-          </p>
-          <p class="muted">
-            Feel free to browse around, check out my latest updates, and follow my journey as I
-            build, learn, and create.
-          </p>
-        </section>
-
-        <section class="card">
-          <h2>What you’ll find here</h2>
-          <ul>
+        <aside class="panel" data-reveal style="--d:300ms">
+          <p class="panel-label">Live apps</p>
+          <ul class="panel-list">
             <li>
-              <span class="icon">🚀</span>
-              <span>Projects and experiments in software development</span>
+              <span class="dot" aria-hidden="true"></span>
+              <a class="pname" href="https://blazej-stanisz.github.io/3000words/" target="_blank" rel="noopener">3000 Words</a>
+              <span class="pkind">Vocabulary trainer</span>
             </li>
             <li>
-              <span class="icon">🤖</span>
-              <span>Explorations in modern AI tools and machine learning</span>
+              <span class="dot" aria-hidden="true"></span>
+              <a class="pname" href="https://blazej-stanisz.github.io/PSM-I-Practice-Tests/" target="_blank" rel="noopener">PSM I Tests</a>
+              <span class="pkind">Practice tests</span>
             </li>
             <li>
-              <span class="icon">📚</span>
-              <span>Courses, certifications, and learning paths</span>
-            </li>
-            <li>
-              <span class="icon">🛠️</span>
-              <span>Tools, workflows, and ideas that help me grow my skills</span>
+              <span class="dot" aria-hidden="true"></span>
+              <a class="pname" href="https://blazej-stanisz.github.io/AZ-900-Practice-Tests/" target="_blank" rel="noopener">AZ-900 Tests</a>
+              <span class="pkind">Practice tests</span>
             </li>
           </ul>
-          <p class="muted" style="margin-top: 10px;">
-            More sections and content will appear over time as I continue developing new projects
-            and expanding my skills.
-          </p>
-        </section>
-      </main>
+          <p class="panel-foot">All three are static single-page apps — open them and they run, no install and no account.</p>
+        </aside>
+      </div>
+    </section>
 
-      <div class="footer">
-        <div class="tagline">
-          <span class="dot"></span>
-          <span>Hosted on GitHub Pages — updated as the journey evolves.</span>
+    <section class="sec sec-line" id="work">
+      <div class="sec-head">
+        <p class="eyebrow" data-reveal>Selected work</p>
+        <h2 data-reveal style="--d:60ms">Three apps, live right now.</h2>
+        <p class="lead" data-reveal style="--d:110ms">
+          Small in scope, finished in behaviour. Each one does a single job, works offline, and keeps your
+          data on your own device.
+        </p>
+      </div>
+
+      <ol class="projects">
+        <li class="proj" data-reveal>
+          <div class="proj-in">
+            <span class="proj-idx">01</span>
+            <div>
+              <h3 class="proj-name">
+                <a href="https://blazej-stanisz.github.io/3000words/" target="_blank" rel="noopener">3000 Words — English vocabulary trainer</a>
+              </h3>
+              <p class="proj-desc">
+                A browser-based trainer for the 3000 most useful English words and phrases, with Polish
+                translations and example sentences. Your progress is stored locally in IndexedDB, so there is
+                no account to create and nothing sent to a server.
+              </p>
+              <ul class="tags">
+                <li class="tag">Vanilla JS</li>
+                <li class="tag">IndexedDB</li>
+                <li class="tag">GitHub Pages</li>
+              </ul>
+            </div>
+            <div class="proj-links">
+              <a class="plink" href="https://blazej-stanisz.github.io/3000words/" target="_blank" rel="noopener">Live<span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="plink" href="https://github.com/blazej-stanisz/3000words" target="_blank" rel="noopener">Source<span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="proj" data-reveal>
+          <div class="proj-in">
+            <span class="proj-idx">02</span>
+            <div>
+              <h3 class="proj-name">
+                <a href="https://blazej-stanisz.github.io/PSM-I-Practice-Tests/" target="_blank" rel="noopener">PSM I — Practice Tests</a>
+              </h3>
+              <p class="proj-desc">
+                Interactive practice tests for the Professional Scrum Master I certification. One HTML page,
+                zero dependencies — open it, pick a set, and check yourself as many times as you like.
+              </p>
+              <ul class="tags">
+                <li class="tag">Single page</li>
+                <li class="tag">Zero dependencies</li>
+                <li class="tag">Exam prep</li>
+              </ul>
+            </div>
+            <div class="proj-links">
+              <a class="plink" href="https://blazej-stanisz.github.io/PSM-I-Practice-Tests/" target="_blank" rel="noopener">Live<span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="plink" href="https://github.com/blazej-stanisz/PSM-I-Practice-Tests" target="_blank" rel="noopener">Source<span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="proj" data-reveal>
+          <div class="proj-in">
+            <span class="proj-idx">03</span>
+            <div>
+              <h3 class="proj-name">
+                <a href="https://blazej-stanisz.github.io/AZ-900-Practice-Tests/" target="_blank" rel="noopener">AZ-900 — Practice Tests</a>
+              </h3>
+              <p class="proj-desc">
+                Interactive practice tests for Microsoft Azure Fundamentals (AZ-900), built the same way as the
+                PSM I set: a single page, no build step, no backend.
+              </p>
+              <ul class="tags">
+                <li class="tag">Single page</li>
+                <li class="tag">Zero dependencies</li>
+                <li class="tag">Exam prep</li>
+              </ul>
+            </div>
+            <div class="proj-links">
+              <a class="plink" href="https://blazej-stanisz.github.io/AZ-900-Practice-Tests/" target="_blank" rel="noopener">Live<span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="plink" href="https://github.com/blazej-stanisz/AZ-900-Practice-Tests" target="_blank" rel="noopener">Source<span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <p class="foot-note" data-reveal>
+        Everything here is public: the source lives on
+        <a href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">GitHub</a>, along with the
+        <a href="https://github.com/blazej-stanisz/App-Policies" target="_blank" rel="noopener">policy files</a>
+        for the apps I publish.
+      </p>
+    </section>
+
+    <section class="sec sec-line" id="explore">
+      <div class="sec-head">
+        <p class="eyebrow" data-reveal>Explore</p>
+        <h2 data-reveal style="--d:60ms">What you'll find here.</h2>
+        <p class="lead" data-reveal style="--d:110ms">
+          This site is a working hub rather than a portfolio archive — the list gets longer as projects and
+          notes pile up.
+        </p>
+      </div>
+
+      <div class="acc">
+        <div class="acc-item" data-reveal>
+          <button class="acc-btn" type="button" aria-expanded="true" aria-controls="p1">
+            <span class="acc-q">Projects and experiments in software development</span>
+            <span class="acc-ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="p1" role="region">
+            <div>
+              <p>
+                Small tools carried all the way to something usable — from the first sketch to a live page you
+                can open in a browser. The three apps above are the current result.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="links">
-          <a class="link-pill" href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">
-            <span class="icon">🐙</span>
-            <span>GitHub profile</span>
-          </a>
+
+        <div class="acc-item" data-reveal>
+          <button class="acc-btn" type="button" aria-expanded="false" aria-controls="p2">
+            <span class="acc-q">Explorations in modern AI tools and machine learning</span>
+            <span class="acc-ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="p2" role="region">
+            <div>
+              <p>
+                Practical experiments with AI tooling and the workflows around it: what genuinely saves time,
+                what turns out to be noise, and what I'd reach for again on the next project.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" data-reveal>
+          <button class="acc-btn" type="button" aria-expanded="false" aria-controls="p3">
+            <span class="acc-q">Courses, certifications, and learning paths</span>
+            <span class="acc-ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="p3" role="region">
+            <div>
+              <p>
+                Study material that got useful enough to share. The PSM I and AZ-900 practice tests in the
+                section above are public and free to use for your own exam preparation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item" data-reveal>
+          <button class="acc-btn" type="button" aria-expanded="false" aria-controls="p4">
+            <span class="acc-q">Tools, workflows, and ideas that help me grow my skills</span>
+            <span class="acc-ico" aria-hidden="true"></span>
+          </button>
+          <div class="acc-panel" id="p4" role="region">
+            <div>
+              <p>
+                The quieter half of the work: habits, small automations, and the everyday setup that makes
+                building things faster and considerably less annoying.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <p class="foot-note" data-reveal>
+        More sections will appear over time as I keep developing new projects and expanding my skills.
+      </p>
+    </section>
+
+    <section class="statement" id="about">
+      <p class="big" data-reveal>
+        <span class="quiet">A space dedicated to</span> creativity, technology, and continuous learning.
+      </p>
+      <p class="lead" data-reveal style="--d:80ms">
+        Whether you're here to explore the repositories, find a practice test, or simply connect — I'm glad
+        you stopped by. Browse around, open whatever looks interesting, and follow along as new things get
+        built, learned, and shipped.
+      </p>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-card" data-reveal>
+        <div>
+          <p class="eyebrow">Get in touch</p>
+          <h2>Follow along — I ship small things often.</h2>
+          <p>
+            The repos are public and the apps are free to use. If something here is useful, or you'd like to
+            compare notes, GitHub is the easiest place to find me.
+          </p>
+        </div>
+        <div class="actions" style="margin-top:0">
+          <a class="btn btn-dark" href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">GitHub profile<span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-dark-ghost" href="#work">Browse the work<span class="arrow" aria-hidden="true">↑</span></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year">2026</span> Błażej Stanisz</span>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="https://github.com/blazej-stanisz" target="_blank" rel="noopener">GitHub</a>
+        <a href="#work">Work</a>
+        <a href="#explore">Explore</a>
+        <a href="#about">About</a>
+      </nav>
+      <span>Hosted on GitHub Pages — built with plain HTML, CSS and JS.</span>
+    </footer>
+
   </div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // reveal on scroll
+    var items = document.querySelectorAll('[data-reveal]');
+    if (!reduced && 'IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      items.forEach(function (el) { io.observe(el); });
+    } else {
+      items.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    // accordion: one panel open at a time
+    var buttons = document.querySelectorAll('.acc-btn');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        buttons.forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+        btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      });
+    });
+
+    // current year
+    var y = document.getElementById('year');
+    if (y) { y.textContent = String(new Date().getFullYear()); }
+  });
+</script>
 </body>
 </html>

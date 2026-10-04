@@ -1,28 +1,61 @@
 # 🌐 Błażej Stanisz — Personal Homepage
 
-Welcome to the personal homepage of **Błażej Stanisz** — a space dedicated to creativity, technology, and continuous learning.
+The personal homepage of **Błażej Stanisz**, served by **GitHub Pages** from the root of this repository:
+<https://blazej-stanisz.github.io/>
 
-Here you’ll find:
+It's a single static page — one `index.html`, no build step, no dependencies, no backend.
 
-- 🚀 Projects and experiments in software development  
-- 🤖 Explorations in modern AI tools and machine learning  
-- 📚 Courses, certifications, and learning paths  
-- 🛠️ Tools, workflows, and ideas that help me grow my skills  
+## What's on the page
 
-This site serves as a central hub for my work: from coding projects and technical deep dives to personal initiatives and digital creations. Whether you’re here to explore my repositories, learn more about my interests, or simply connect — I’m glad you stopped by.
+| Section | Anchor | Content |
+|---|---|---|
+| Nav | — | Sticky pill navigation: monogram, section links, GitHub button |
+| Hero | `#top` | Headline claim, two actions, and a "Live apps" panel |
+| Selected work | `#work` | The three public apps, each with a description, tags and **Live** / **Source** links |
+| Explore | `#explore` | "What you'll find here" — four items as an accordion |
+| About | `#about` | Statement paragraph |
+| Get in touch | `#contact` | Inverted (light) call-to-action card |
+| Footer | — | Copyright, links, hosting note |
 
-Feel free to browse around, check out my latest updates, and follow my journey as I build, learn, and create.
+Project entries link to real, live apps, so the section stays honest as long as those apps stay up:
 
----
+- [3000 Words](https://blazej-stanisz.github.io/3000words/) — English vocabulary trainer ([repo](https://github.com/blazej-stanisz/3000words))
+- [PSM I — Practice Tests](https://blazej-stanisz.github.io/PSM-I-Practice-Tests/) ([repo](https://github.com/blazej-stanisz/PSM-I-Practice-Tests))
+- [AZ-900 — Practice Tests](https://blazej-stanisz.github.io/AZ-900-Practice-Tests/) ([repo](https://github.com/blazej-stanisz/AZ-900-Practice-Tests))
 
-## 📬 Contact
+## Design
 
-If you'd like to reach out, collaborate, or just say hi — feel free to connect through GitHub or other platforms linked in my profile.
+The visual language is dark, minimal and typographic, borrowed in spirit from [cleanmeter.app](https://www.cleanmeter.app/):
+a near-black canvas, generous whitespace, hairline dividers, oversized headings with tight tracking, and pill-shaped
+controls.
 
----
+- **Type:** Inter (300–700) from Google Fonts, falling back to the system UI stack
+- **Tokens:** all in `:root` at the top of the `<style>` block — ink `#f4f5f7`, muted `#9aa0ab`, accent `#38bdf8`,
+  background `#0c111d`, surface `#161b26`, hairlines `rgba(255,255,255,.085)`, pill radius `50px`
+- **Backdrop:** one soft accent glow plus a faint fading grid, both in the `.bg` layer
+- **Motion:** scroll-reveal (`IntersectionObserver`) and the accordion; everything is disabled under
+  `prefers-reduced-motion`
+- **JS-off safe:** the reveal animation only hides content when the `js` class is present on `<html>`, so the page
+  renders fully without JavaScript
 
-## 🧭 About This Site
+## Editing
 
-This homepage is hosted on **GitHub Pages** and updated as I continue developing new projects and expanding my skills. More sections and content will appear over time.
+Everything lives in `index.html`:
 
-Stay tuned!
+- copy — plain HTML in the `main` block
+- colours, spacing and radii — the `:root` custom properties
+- reveal timing — the `--d` inline custom property on each `[data-reveal]` element (ms)
+- links — hero panel, project rows, CTA and footer each carry their own `href`s
+
+## Local preview
+
+Open `index.html` in a browser, or serve the folder:
+
+```bash
+python -m http.server 8000
+```
+
+## Deploying
+
+Push to `main`. GitHub Pages publishes the repository root, so `index.html` is live within a minute.
+`app-ads.txt` also lives at the root and must stay there — it is read by ad networks, not by the page itself.
