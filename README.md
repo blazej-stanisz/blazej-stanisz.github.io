@@ -17,3 +17,6 @@ https://blazej-stanisz.github.io/
 ## ▶️ My apps on Google Play
 
 https://play.google.com/store/apps/developer?id=B%C5%82a%C5%BCej+Stanisz
+
+## 📚 My GH repositories
+https://github.com/blazej-stanisz?tab=repositories
