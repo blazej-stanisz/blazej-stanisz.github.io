@@ -1,8 +1,10 @@
 # 🌐 Błażej Stanisz — Personal Homepage
 
-The personal homepage of **Błażej Stanisz**, served by **GitHub Pages** from the root of this repository:
-<https://blazej-stanisz.github.io/>
+> **🌐 Live site:** <https://blazej-stanisz.github.io/>
+>
+> **▶️ Google Play:** <https://play.google.com/store/apps/developer?id=B%C5%82a%C5%BCej+Stanisz> — all my Android apps
 
+The personal homepage of **Błażej Stanisz**, served by **GitHub Pages** from the root of this repository.
 It's a single static page — one `index.html`, no build step, no dependencies, no backend.
 
 ## What's on the page
