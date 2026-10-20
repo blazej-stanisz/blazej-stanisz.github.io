@@ -1,4 +1,4 @@
-🌐 Błażej Stanisz - Personal Homepage
+# Błażej Stanisz - Personal Homepage
 
 Welcome to the personal homepage of Błażej Stanisz
 
