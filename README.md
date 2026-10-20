@@ -1,10 +1,11 @@
-# Błażej Stanisz - Personal Homepage
+# 🏠 Błażej Stanisz - Personal Homepage
 
 Welcome to the personal homepage of Błażej Stanisz
 
 Here you’ll find:
 
 🚀 Projects and experiments in software development
+
 🛠️ Tools and ideas that help me grow my skills
 
 This site serves as a central hub for my work: from coding projects and technical deep dives to personal initiatives and digital creations. Whether you’re here to explore my repositories, learn more about my interests.
