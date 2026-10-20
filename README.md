@@ -9,6 +9,10 @@ Here you’ll find:
 
 This site serves as a central hub for my work: from coding projects and technical deep dives to personal initiatives and digital creations. Whether you’re here to explore my repositories, learn more about my interests.
 
-🌐 https://blazej-stanisz.github.io/
+## 🌐 My website
 
-▶️ https://play.google.com/store/apps/developer?id=B%C5%82a%C5%BCej+Stanisz
+https://blazej-stanisz.github.io/
+
+## ▶️ My apps on Google Play
+
+https://play.google.com/store/apps/developer?id=B%C5%82a%C5%BCej+Stanisz
